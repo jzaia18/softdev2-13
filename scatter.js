@@ -4,19 +4,15 @@ var csScale = 1/10; // a constant (CHANGE THIS)
 //d3 select from id
 var plot = d3.select('#plot');
 
-//adding width and height
-plot.attr("width" ,"1000")
-plot.attr("height","1000")
-
 var addPoints = function(plot,data) {
 	plot.selectAll("circle")
 		.data(data)
 		.enter()
 		.append("circle")
-		.attr("cx"   , function(a) { return (a[0] - 2000)*10 + 10; } )
+		.attr("cx"   , function(a) { return (a[0] - 2000)*50 + 10; } )
 		.attr("cy"   , function(a) { return a[1] * a[2]; } )
 		.attr("r"    , function(a) { return 5;    } )
-		.attr("style", function(a) { return "fill: " + a[3]; } )
+		.attr("style", function(a) { return "fill: " + a[3]; } );
 };
 
 var Data = [
